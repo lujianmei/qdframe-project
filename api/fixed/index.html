@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css"> 
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents </a>
+    
+
+            <h1>模块名称： Fixed</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   使元素处于一个绝对位置，不受页面滚动影响。
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+   QD.fix (id , type , className); 
+   QD.fixRemove (id , type , className); //type 参数暂不支持像素值
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+
+<pre class="code prettyprint">
+<br/>Id : 需要固定元素ID (必填)
+<br/>type: 元素固定位置( top ,bottom,left , right , center ,middle ,或像素值)2个位置用逗号隔开,当位置为像素值时遵循top,letf的顺序（必填 多选）
+<br/>className : 还需要往元素上添加的class多个class用空格隔开（选填）
+
+</pre>
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint"> &#x2F;&#x2F; 
+&lt;script&gt;
+QD.fix("right","right,bottom"); //元素固定在右下角
+QD.fix("top","top");//元素固定在左上角
+QD.fix("bottom","bottom");//左下角
+QD.fix("center","top,center");//底部水平居中
+QD.fixRemove("center");//移除元素的所有位置
+QD.fix("middle","center,middle","green");//在页面中央 
+QD.fix("abs","100,500");//固定位置
+&lt;/script&gt;
+</pre>
+
+
+<p>
+    说明
+</p>
+
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; HTML代码，如果需要
+
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; CSS代码，如果需要
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; Javascript代码，如果需要
+
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/fixed/index.html">例子一</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+
+</body>
+</html>

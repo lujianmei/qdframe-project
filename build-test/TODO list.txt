@@ -1,0 +1,65 @@
+各模块的代码注释需要统一：
+模块注释：
+	/*
+	 method getValue v1.0.0
+	 =================================
+
+	 Infomation
+	 ----------------------
+	 Author : lipengyang
+	 E-Mail : lipengyang@trs.com.cn
+	 Date : 2004-01-24
+	 Readme:获取URL参数
+
+	 Example
+	 ----------------------
+	 pram1:	//获取参数名
+
+	 Supported in Internet Explorer, Mozilla Firefox
+	 */
+
+方法注释：
+		/**
+         * Aligns node with a point on another node or region.
+         * Possible alignment points are:
+         * @method to
+         * @param region {String || Node || HTMLElement || Object} The node or
+         * region to align with. Defaults to the viewport region.
+         * @param regionPoint {String} The point of the region to align with.
+         * @param point {String} The point of the node aligned to the region.
+         * @param resize {Boolean} Whether or not the node should re-align when
+         * the window is resized. Defaults to false.
+         */
+
+需要完成的工作
+1. fixed
+需要添加一个带鼠标滚动的判断；
+需要添加一个固定位置的判断，固定位置需要基于不同的浏览器长宽的相对位置；
+需要完善api文档，js代码注释
+
+2. paging
+需要支持JSON格式数据；
+需要完善api文档，js代码注释
+
+3.pompu
+需要完善api文档，js代码注释
+
+4.scroll-carousel
+完善api，js代码注释
+
+5.scroll-scrollleftright, topdown
+完善api，js代码注释
+
+6. tab
+完善api，js代码注释
+
+7.tools
+完善api，js代码注释
+
+8. validators
+完善api，js代码注释
+
+9. autocomplete
+
+
+

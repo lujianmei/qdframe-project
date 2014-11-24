@@ -1,0 +1,1 @@
+java -jar yuicompressor-2.4.8.jar --type js --charset utf-8 qdframe-v1.0.0.js -o qdframe-min.js

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../images/pager.css" rel="stylesheet" type="text/css" charset="UTF-8"/>
+<title>QDFrame</title>
+</head>
+<body>
+
+
+	<div class="tab_item"> 
+            <div class="nr_pl_pd_tab_drivedown">
+				<span class="title_sys">普通Tab切换操作系统</span>
+				<ul class="sys_nav js_sys_nav">
+					<li><a href="javascript:;" ><b>Windows XP</b></a></li>
+					<li><a href="javascript:;" ><b>Windows Vista</b></a></li>
+					<li><a href="javascript:;" ><b>Windows 7</b></a></li>
+					<li><a href="javascript:;" ><b>Windows 8</b></a></li>
+				</ul>
+				<div class="drive_data_wrap js_drive_data_wrap">
+					<div class="drive_data_item">
+						Windows XP
+					</div>
+					<div class="drive_data_item">
+						Windows Vista
+					</div>
+					<div class="drive_data_item">
+						Windows 7
+					</div>
+					<div class="drive_data_item">
+						Windows 8
+					</div>
+				</div>
+			</div>
+          </div>
+		  
+		  <div class="tab_item" > 
+            <div class="nr_pl_pd_tab_drivedown">
+				<span class="title_sys">异步请求Tab切换操作系统</span>
+				<ul class="sys_nav js_sys_navs">
+					<li><a href="javascript:;" rel="../data/winxp.xml"><b>Windows XP</b></a></li>
+					<li><a href="javascript:;" rel="../data/winvista.xml"><b>Windows Vista</b></a></li>
+					<li><a href="javascript:;" rel="../data/win7.xml"><b>Windows 7</b></a></li>
+					<li><a href="javascript:;" rel="../data/win8.xml"><b>Windows 8</b></a></li>
+				</ul>
+				<div class="drive_data_wrap js_drive_data_wraps">
+					<div class="drive_data_item">
+						Windows XP
+					</div>
+				</div>
+			</div>
+          </div>
+		  <br /><br /><br /><br /><br />
+<script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>	
+		  <script type="text/javascript">
+			QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",false);
+			QD.ChangeTab($(".js_sys_navs li a"),$(".js_drive_data_wraps .drive_data_item"),"active",true);
+		  </script>
+		  
+		  
+</body>
+</html>

@@ -1,0 +1,26 @@
+@charset "utf-8";
+/*全局设置*/
+*{margin:0;padding:0;}
+input,select,textarea{font-size:1em;margin:0;color:#000;font-family:tahoma, arial, simsun, sans-serif;}
+table{border-collapse:collapse;border-spacing:0;}
+:focus{outline:none;}
+body{font:12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
+/*表单设置*/
+.registerform .need{width:10px;color:#b20202;}
+.registerform td{padding:5px 0;vertical-align:top;text-align:left;}
+.registerform .inputxt,.registerform textarea{border:1px solid #a5aeb6;width:196px;padding:2px;}
+.registerform .gray{color:gray;}/*提示信息样式*/
+
+/*提示信息*/
+.validform_error{background-color:#ffe7e7;}/*校验错误对象样式*/
+.validform_checktip{margin-left:8px;line-height:20px;height:20px;overflow:hidden;color:#999;font-size:12px;}
+.validform_wrong{color:red;padding-left:20px;white-space:nowrap;background:url(error.png) no-repeat left center;}/*右侧展示信息,失败*/
+.validform_right{color:#71b83d;padding-left:20px;background:url(right.png) no-repeat left center;}/*有侧展示信息，通过*/
+/*弹出错误提示样式*/
+#validform_dialog{color:#7d8289;font:12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;width:280px;background:#fff;position:absolute;top:0px;right:50px;z-index:99999; display:none;filter:progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');-webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa;}
+#validform_dialog .validform_title{line-height:25px;height:25px;text-align:left;font-weight:bold;padding:0 8px;color:#fff;position:relative;background-color:#000;}
+#validform_dialog a.validform_close:link,#validform_dialog a.validform_close:visited{line-height:22px;position:absolute;right:8px;top:0px;color:#fff;text-decoration:none;}
+#validform_dialog a.validform_close:hover{color:#cc0;}
+#validform_dialog .validform_info{padding:8px;border:1px solid #000;border-top:none;text-align:left;}
+

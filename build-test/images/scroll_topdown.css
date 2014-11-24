@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*全局样式*/
+/*global style*/
+body,ul,li{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none outside none;
+}
+img {
+  border: 0 none;
+}
+a img{
+  vertical-align:bottom;
+}
+
+a {
+  text-decoration: none;
+  color:#606060;
+}
+a:hover {
+  text-decoration: underline;
+  color:#005aab;
+}
+
+/*上下滚动具体样式*/
+/*top down scroll detail style*/
+/*布局样式*/
+/*layout style*/
+
+body{
+	position:relative;
+}
+.product_scroll{border:0px red solid;background:#fff;width:170px;height:600px;position:absolute;left:500px;top:10px;}
+.product_scroll .container{border:0px blue solid;width:170px;height:500px;margin:50px 0px;position:relative;}
+.product_scroll .product_item{border:0px green solid;width:170px;height:500px;overflow:hidden;position:relative;}
+.product_scroll ul{border:0px yellow solid;width:170px;height:20000px;position:relative;}
+.product_scroll li{border:0px purple solid;padding-top:12px;padding-bottom:12px; text-align:center; height:140px;float:left;width:170px;}
+.product_scroll li .product_name{display:block; font:normal 16px/16px 'Microsoft Yahei'; margin:0px;}
+.product_scroll .btn_scroll_prev,.product_scroll .btn_scroll_next{width:37px;height:23px;position:absolute; left:70px;border:0px red solid;}
+.product_scroll .btn_scroll_prev{display:""; top:-50px;}
+.product_scroll .btn_scroll_next{bottom:-50px;}
+.product_scroll .btn_scroll_prev a,.product_scroll .btn_scroll_next a{display:block; width:37px; height:23px;}
+/*滚动按钮图片展示*/
+/*scroll button picture style*/
+.product_scroll .icon_scroll_btn{background-image:url(icon_scroll_btn_td.png) !important; background-image:url(icon_scroll_btn_td_ie6.jpg); background-repeat:no-repeat;}
+.product_scroll .btn_scroll_prev a{background-position:-1px -40px;}
+.product_scroll .btn_scroll_prev a:hover{background-position:-1px -114px;}
+.product_scroll .btn_scroll_next a{background-position:-1px -9px;}
+.product_scroll .btn_scroll_next a:hover{background-position:-1px -82px;}

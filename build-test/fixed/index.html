@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Fix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../images/QD-fix.css">
+
+<style style="text/css">
+body{margin:0px;padding:0px;}
+#top,#bottom,#center,#middle,#right,#abs{
+   width:200px;
+   height:50px;
+   background-color:#FF0000;
+   color:#FFFFFF;
+   font-size:25px;
+   text-align:center;
+}
+#middle.green{
+   color:green;
+   font-size:12px;
+}
+#follow{
+   position:absolute;
+   left:1000px;
+   top:100px;
+}
+#followChild{
+   width:100px;
+   height:50px;
+   background-color:#00FF00;
+   text-align:center;
+}
+#followCont{
+   width:100px;
+   height:50px;
+}
+</style>
+</head>
+<body>
+<div id="top">top</div>
+<div id="bottom">bottom</div>
+<div id="center">center</div>
+<div id="middle">middle</div>
+<div id="right">right</div>  
+<div id="abs">"top:100,left:500"</div>
+<div id="follow"><div id="followChild">跟随</div></div>
+<div id="followCont"></div>
+<div style="height:1000px;">234243</div>
+
+<script src="../images/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<!--<script type="text/javascript" src="../images/qdframe-min-v1.0.0.js" charset="UTF-8"></script>-->
+<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>
+<script type="text/javascript">
+QD.fix("right","right,bottom"); //元素固定在右下角
+QD.fix("top","top");//元素固定在左上角
+QD.fix("bottom","bottom");//左下角
+QD.fix("center","top,center");//底部水平居中
+QD.fixRemove("center");//移除元素的所有位置
+QD.fix("middle","center,middle","green");//在页面中央 
+QD.fix("abs","100,500");//固定位置
+
+/***跟随页面滚动到指定位置***/
+var followChild = $("#followChild") , flag = true;
+QD.fix("followCont","top,1000");
+$(window).scroll( function(){ 
+	var scl = $(this).scrollTop();
+    if(scl>=100){
+		if(flag){
+		   followChild.prependTo($("#followCont"));
+           flag = false;
+		}
+	}else{
+	   if(!flag){
+	       followChild.prependTo($("#follow"));
+		   flag = true;
+	   }
+	   
+	}
+});
+</script>
+</body>
+</html>

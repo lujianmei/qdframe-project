@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： </h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content">
+				<h2 id="getting-started">功能描述:</h2>
+<pre class="code prettyprint">
+<!--  功能描述  start-->
+1、因有ajex请求需要使用apache或tomcat 服务器观看效果
+2、对WCM分页进行了，优化更新，采用xml实现了无刷新分页，考虑到有可能数据过多xml文件过大，采用多xml实现。
+3、它的好处如下：分页只生成了xml，而不用生成整个HTML页面，节省了服务器空间，实现无刷新分页，提升了用户体验。
+4、模板中填写下列代码，发布文件名:data，文件扩展名:xml。
+5、xml中参数pageCount分页总数量，record_Count数据总量
+<!--  功能描述  start-->
+</pre>
+				
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+
+QD.Page('data/data[n].xml','#page','#data');
+
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+<pre class="code prettyprint">
+pram1:	//分页数据URL
+pram2:	//分页输入选择器
+pram3:	//数据输入选择器
+insertItem: //定义分页数据样式
+</pre>
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint" > &#x2F;&#x2F; 例子代码
+说明
+<textarea style="border:0px; background-color:#fff;height:150px;width:900px;" disabled="disabled">
+function insertItem(data) {
+	return "<li><a href=\""+$(data).attr('url')+"\" title=\""+$(data).attr('title')+"\" target=\"_blank\">"+$(data).text()+"</a></li>";
+}
+</textarea>
+	QD.Page('data/data[n].xml','#page','#data');
+</pre>
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint" style="overflow-x:hidden;overflow-y:hidden">
+
+<textarea style="border:0px; background-color:#fff;height:100px;width:1000px;overflow-x:hidden;overflow-y:hidden" disabled="disabled">
+&#x2F;&#x2F; HTML代码，如果需要
+<div><ul id="data"></ul></div><br />
+<div ID="page"></div><br /><br />
+
+		  </textarea>
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; CSS代码，如果需要
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; Javascript代码，如果需要
+<textarea style="border:0px; background-color:#fff;height:100px;width:1000px;overflow-x:hidden;overflow-y:hidden" disabled="disabled">
+//定义分页数据样式
+function insertItem(data) {
+	return "<li><a href=\""+$(data).attr('url')+"\" title=\""+$(data).attr('title')+"\" target=\"_blank\">"+$(data).text()+"</a></li>";
+}
+//参数 分页数据xml，分页写入选择器，数据写入选择器
+QD.Page('data/data[n].xml',$("#page"),$("#data"));
+</textarea>
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="index1.html">例子一</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

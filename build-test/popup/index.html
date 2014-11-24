@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>popup</title>
+<link type="text/css" rel="stylesheet" href="../images/popuplayer.css"/>
+
+</head>
+<body>
+		<a href="javascript:void(0);" id="inside">内嵌弹出层</a><br/>
+		<a href="javascript:void(0);" id="outside">链接弹出层</a>
+		<select id="test">
+	<option> tst</option>
+	<option> tst</option><option> tst</option><option> tst</option><option> tst</option><option> tst</option><option> tst</option>
+</select>
+		<br/><br/><br/><br><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="http://www.baidu.com">www.baidu.com</a>
+
+
+		<div id="box" style="display:none;">
+		<!--下面内容将在弹出窗中展示-->
+			<div class="inside_con">
+				<ul>
+					<li><a href="http://www.baidu.com" target="_blank">baidu</a></li>
+					<li><a href="http://www.baidu.com" target="_blank">搜索引擎</a></li>
+					<li><a href="http://www.baidu.com" target="_blank">搜索</a></li>
+				</ul>
+			</div>
+		</div>
+        
+        <script type="text/javascript" src="../images/jquery-1.8.3.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				//内嵌弹出层调用
+				QD.FloagLayer($('#inside'),600,280,false,"内嵌弹出层",$("#box").html(),"");
+				//链接弹出层调用
+				QD.FloagLayer($('#outside'),600,280,true,"链接弹出层调用","","iframepage.html");
+			});
+		</script>
+</body>
+</html>

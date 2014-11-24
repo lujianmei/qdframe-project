@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： Pop-up</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   弹出内嵌html内容窗口，并且窗口可以鼠标移动;
+弹出链接内容窗口，并且窗口可以鼠标移动
+
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+QD.FloagLayer(idobj,width,height,bgvisibel,title,htmlcontent,iframeurl)
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+
+<pre class="code prettyprint">
+1. idobj为出发弹出窗口的对象<br/>
+2.width为弹出窗口的宽度 参考值400<br/>
+3.height为弹出窗口的高度 参考值250<br/>
+4. bgvisibel  是否显示遮罩，true为显示，false 为不显示 参考值false<br/>
+5. title 弹出窗口的标题内容  参考值””<br/>
+6. htmlcontent在弹出窗口中要展示的html 内容<br/>
+7. iframeurl 在弹出窗口中要展示的url链接<br/>
+</pre>
+
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint">
+//内嵌弹出层调用
+QD.FloagLayer($('#inside'),600,280,true,"内嵌弹出层",$("#box").html(),"");
+//链接弹出层调用
+QD.FloagLayer($('#outside'),600,280,true,"链接弹出层调用","","iframepage.html");
+</pre>
+
+
+<p>
+    说明
+</p>
+
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint">
+<a href="javascript:void(0);" id="inside">内嵌弹出层</a><br/>
+<a href="javascript:void(0);" id="outside">链接弹出层</a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="http://www.baidu.com">www.baidu.com</a>
+
+
+<div id="box" style="display:none;">
+<!--下面内容将在弹出窗中展示-->
+	<div class="inside_con">
+		<ul>
+			<li><a href="http://www.baidu.com" target="_blank">baidu</a></li>
+			<li><a href="http://www.baidu.com" target="_blank">搜索引擎</a></li>
+			<li><a href="http://www.baidu.com" target="_blank">搜索</a></li>
+		</ul>
+	</div>
+</div>
+
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+/*具体样式*/
+.qd_backlayer{position:fixed;_position:absolute;z-index:998;top:0px;left:0px;width:100%;_width:expression(document.documentElement.clientWidth);height:100%;_height:expression(document.documentElement.clientHeight);background:rgb(50,50,50);background:rgba(0,0,0,0.5);}/*遮罩背景，可根据具体设计进行更改*/
+.qd_container{position:fixed;_position:absolute;z-index:999;padding:8px;border:solid 1px #000;_background:#777;background:rgba(10,10,10,0.5);}/*容器*/
+.qd_container .qd_inside{background-color:#FFFFFF;height:250px;}/*容器内的容器，背景设置为白色，*/
+.qd_container .qd_inside .qd_locked{-moz-user-select:none;-webkit-user-select:none;position:relative;display:block;margin:0;padding:0;font-size:13px;line-height:30px;height:30px;padding-left:5px;font-family:Arial;background:#F1F7FC;font-weight:normal;cursor:move;font-weight:800;color:#000;}
+.qd_container .qd_inside .qd_locked a{position:absolute;display:block;right:6px;margin-top:6px;top:0px;font-size:14px;background-image:url(close.fw.png);background-repeat:no-repeat;background-position:center top;width:17px;height:17px;cursor:pointer;display:inline-block;}
+.qd_container .qd_inside .qd_locked a:hover{background-position:center bottom;}
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+$(function(){
+	//内嵌弹出层调用
+	QD.FloagLayer($('#inside'),600,280,true,"内嵌弹出层",$("#box").html(),"");
+	//链接弹出层调用
+	QD.FloagLayer($('#outside'),600,280,true,"链接弹出层调用","","iframepage.html");
+});
+
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/popup/index.html">弹出层</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+
+</body>
+</html>

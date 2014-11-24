@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+<title>Html代码转义工具 </title>
+<body style="" youdao="bind">
+
+<textarea id="a" style="width:90%; height:200px"></textarea><br><textarea id="b" style="width:90%; height:200px"></textarea>
+
+<script>
+<!--
+function HTMLEncode(html) 
+{ 
+var temp = document.createElement ("div"); 
+(temp.textContent != null) ? (temp.textContent = html) : (temp.innerText = html); 
+var output = temp.innerHTML; 
+temp = null; 
+return output; 
+};(function() {
+    document.onclick = function() {
+        var a = document.getElementById("a"),
+            b = document.getElementById("b");
+        var str = a.value;
+        s = str.replace(/&/g, "&gt;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        b.value = HTMLEncode(a.value);
+    }
+})();
+//-->
+</script>
+      
+ 
+ 

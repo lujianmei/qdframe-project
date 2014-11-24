@@ -1,0 +1,171 @@
+
+
+a {
+    color:  #909090;
+    text-decoration: none;
+}
+.paginations .p{float:left;}
+.paginations .n{float:left;}
+.paginations .p em{
+	padding:2px 8px;
+	margin: 2px;
+	background-color: #EAEAEE;
+	color: #D71249;
+	display:block;
+	float:left;
+	/*
+	text-align:center;
+	cursor:pointer;
+	display:inline-block;
+	*display:inline;
+	*zoom:1; 
+	overflow:visible;
+	line-height:normal;
+	vertical-align:middle;
+	box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);
+	cursor: pointer;
+	border-radius:3px;padding:6px 16px;  
+	*/
+}
+
+
+
+.paginations .p a{
+	padding:2px 8px;
+	margin: 2px;
+	display:block;
+	float:left;
+	/*
+	text-align:center;
+	cursor:pointer;
+	display:inline-block;
+	*display:inline;
+	*zoom:1; 
+	overflow:visible;
+	line-height:normal;
+	vertical-align:middle;
+	box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);
+	cursor: pointer;
+	border-radius:3px;padding:6px 16px;  
+	
+	background-image:url(about:blank); 
+	*/
+}
+.paginations .n a{
+	padding:2px 8px;
+	margin: 2px;
+	display:block;
+	background-image:url(about:blank); 
+	float:left;
+	/*
+	text-align:center;
+	cursor:pointer;
+	display:inline-block;
+	*display:inline;
+	*zoom:1; 
+	overflow:visible;
+	line-height:normal;
+	vertical-align:middle;
+	box-shadow:inset 1px 1px 0 rgba(255,255,255,0.3);
+	cursor: pointer;
+	border-radius:3px;padding:6px 16px;  
+	*/
+}
+.paginations a:hover{
+}
+.hi_bl b{
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 14px;
+    font-weight: normal;
+}
+.hi_br b{
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 14px;
+    font-weight: normal;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea,
+label {
+  font: 14px/1.5 tahoma, arial, Microsoft Yahei, \5b8b\4f53, sans-serif;
+  -webkit-text-size-adjust:none; /* fix Chrome 12 px limit */
+  color:#606060;
+}
+button,
+input,
+select,
+label {
+  vertical-align:middle;
+}
+label {
+  padding-left:0.4em;
+}
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  padding-bottom:10px;
+}
+ul, ol {
+list-style: none outside none;
+zoom: 1;
+}
+.nr_pl_pd_tab_drivedown{}
+.nr_pl_pd_tab_drivedown .title_sys{color:#303030; display:block; font-size:16px; padding:15px 0 15px 20px;}
+.nr_pl_pd_tab_drivedown .sys_nav{margin-bottom:10px; overflow:hidden; padding:0 0 0 20px; zoom:1;}
+.nr_pl_pd_tab_drivedown .sys_nav li{float:left; margin-right:10px;}
+.nr_pl_pd_tab_drivedown .sys_nav li a,
+.nr_pl_pd_tab_drivedown .sys_nav li a b{ display: inline-block; height: 20px; overflow: hidden;}
+.nr_pl_pd_tab_drivedown .sys_nav li a{ background-position: 1000px 1000px; padding-left: 5px; margin: 0; vertical-align: middle; float: left; display: inline;}
+.nr_pl_pd_tab_drivedown .sys_nav li a b{ background-position: 1000px 1000px; line-height: 20px; font-size: 14px; height: 20px; overflow: hidden; color: #606060; font-weight: 300; text-align: center; font-family: "Microsoft Yahei"; padding: 0 5px 0 0px; cursor: pointer; vertical-align: top;}
+.nr_pl_pd_tab_drivedown .sys_nav li a:hover{}
+.nr_pl_pd_tab_drivedown .sys_nav li a.active{background: red;}
+.nr_pl_pd_tab_drivedown .drive_data_item{display:none;}
+.nr_pl_pd_tab_drivedown table{width:100%;}
+.nr_pl_pd_tab_drivedown table thead th,
+.nr_pl_pd_tab_drivedown table thead td{border-bottom:3px solid #a6a6a6; color:#303030; padding-top:10px; padding-bottom:10px;}
+.nr_pl_pd_tab_drivedown table tbody th,
+.nr_pl_pd_tab_drivedown table tbody td{border-bottom:1px solid #ddd; color:#606060; padding-top:10px; padding-bottom:10px;}
+.nr_pl_pd_tab_drivedown table tr.odd{background-color:#f7f7f7;}
+.nr_pl_pd_tab_drivedown table th{padding-left:20px;}
+
+

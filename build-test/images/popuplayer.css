@@ -1,0 +1,17 @@
+@charset "utf-8";
+/*全局样式*/
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+
+/*具体样式*/
+.qd_backlayer{position:fixed;_position:absolute;z-index:998;top:0px;left:0px;width:100%;_width:expression(document.documentElement.clientWidth);height:100%;_height:expression(document.documentElement.clientHeight);background:rgb(50,50,50);background:rgba(0,0,0,0.5);}/*遮罩背景，可根据具体设计进行更改*/
+.qd_container{position:fixed;_position:absolute;z-index:999;padding:8px;border:solid 1px #000;_background:#777;background:rgba(10,10,10,0.5);}/*容器*/
+.qd_container .qd_inside{background-color:#FFFFFF;height:250px;}/*容器内的容器，背景设置为白色，*/
+.qd_container .qd_inside .qd_locked{-moz-user-select:none;-webkit-user-select:none;position:relative;display:block;margin:0;padding:0;font-size:13px;line-height:30px;height:30px;padding-left:5px;font-family:Arial;background:#F1F7FC;font-weight:normal;cursor:move;font-weight:800;color:#000;}
+.qd_container .qd_inside .qd_locked a{position:absolute;display:block;right:6px;margin-top:6px;top:0px;font-size:14px;background-image:url(close.fw.png);background-repeat:no-repeat;background-position:center top;width:17px;height:17px;cursor:pointer;display:inline-block;}
+.qd_container .qd_inside .qd_locked a:hover{background-position:center bottom;}
+.qd_ie6_popup_bgframe{position:fixed;_position:absolute;z-index:997;top:0px;left:0px;width:100%;_width:expression(document.documentElement.clientWidth);height:100%;_height:expression(document.documentElement.clientHeight);background:rgb(50,50,50);background:rgba(0,0,0,0.5);}

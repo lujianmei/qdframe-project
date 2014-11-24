@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： Validators</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   本模块提供对各种控件的校验，校验包含对控制的格式校验，类型校验；
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+QD.ValidForm(idobj,tiptype,rightinfo);
+QD.SubmitValidForm(idobj,tiptype,rightinfo);
+QD.ResetForm(idobj);
+
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+
+<pre class="code prettyprint">
+1. idobj 为form表单对象<br/>
+2. tiptype为提示校验失败信息方式 1表示弹窗提示  2表示在右侧展示 参考值为1弹窗提示方式<br/>
+3. rightinfo为当校验正确之后需要展示的信息，如果不需要提示校验正确信息，只需要设置值为空。参考值为””<br/>
+</pre>
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint">
+QD.ValidForm($(".registerform"),2,"校验通过");
+QD.SubmitValidForm($(".registerform"),2,"校验通过");
+QD.ResetForm($(".registerform"));
+</pre>
+
+
+<pre class="code prettyprint">
+对表单中的标签设置说明:<br/>
+需要对标签进行校验需要在标签中添加属性datatype<br/>
+其中datatype值分别为*，num，mobile，shenfenzheng，length，bankcard，email。<br/>
+num：数字校验<br/>
+mobile：手机号校验<br/>
+shenfenzheng：身份证校验<br/>
+length：长度校验 需要添加lengthmin最小值 以及lengthmax最大值，如果没有默认为0到100。<br/>
+bankcard：银行卡校验<br/>
+email：邮箱校验<br/>
+
+如果标签可以为空，不为空才校验，需要在标签中添加ignore=”ignore”。<br/>
+自定义空提示信息，需要在标签中添加nullmsg=”自定义空提示信息”，否则使用默认值“请填入信息！”。<br/>
+自定义校验错误提示信息，需要在标签中添加errormsg=”自定义错误提示信息”,否则使用默认值“请输入正确信息！”。
+</pre>
+
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint">
+&lt;div style="margin:20px;"&gt;
+	&lt;form class="registerform" action=""&gt;
+		&lt;table width="100%" style="table-layout:fixed;"&gt;
+			&lt;tr&gt;
+				&lt;td class="need" style="width:10px;"&gt;*&lt;/td&gt;
+				&lt;td style="width:70px;"&gt;用户名：&lt;/td&gt;
+				&lt;td style="width:205px;"&gt;&lt;input type="text" value="" name="name" class="inputxt" datatype="length" lengthmin=2  lengthmax="10" ajaxurl="valid.php" nullmsg="请输入用户名！" errormsg="昵称至少2个字符,最多10个字符！" /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;密码：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="password" value="" name="userpassword" class="inputxt" datatype="length"  lengthmin="4" lengthmax="11" nullmsg="请设置密码！" errormsg="密码范围在4~11位之间,不能使用空格！" /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;确认密码：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="password" value="" name="userpassword2" class="inputxt" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;&lt;/td&gt;
+				&lt;td&gt;Email：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="text" value="" name="email" class="inputxt" ignore="ignore" datatype="email" nullmsg="请输入您常用的邮箱！" errormsg="请输入正确的邮箱！" /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;移动电话：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="text" value="" name="tel" class="inputxt" datatype="mobile" errormsg="请输入正确手机号码！"  /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;身份证：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="text" value="" name="card" class="inputxt" datatype="shenfenzheng" errormsg="请输入正确的身份证号！"  /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;银行卡号：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="text" value="" name="e-card" class="inputxt" datatype="bankcard" errormsg="请输入正确银行卡号！"  /&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;性别：&lt;/td&gt;
+				&lt;td&gt;&lt;input type="radio" value="1" name="gender" id="male"  datatype="radio" errormsg="请选择性别！" /&gt;男&lt;input type="radio" value="2" name="gender" id="female"/&gt;女&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;省份：&lt;/td&gt;
+				&lt;td&gt;&lt;select name="province" id="province" datatype="select" errormsg="请选择省份！" &gt;&lt;option value=""&gt;--请选择省份--&lt;/option&gt;&lt;option value="1"&gt;江西省&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;购物网：&lt;/td&gt;
+				&lt;td&gt;
+				&lt;input name="shoppingsite2" id="shoppingsite21" type="checkbox"  value="1" datatype="checkbox" errormsg="请选择您常去的购物网站！" /&gt;&lt;label for="shoppingsite21"&gt;淘宝网&lt;/label&gt;&amp;nbsp;&amp;nbsp;
+				&lt;input name="shoppingsite2" id="shoppingsite22" type="checkbox"  value="2" /&gt;&lt;label for="shoppingsite22"&gt;当当网&lt;/label&gt;
+				&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;*&lt;/td&gt;
+				&lt;td&gt;备注：&lt;/td&gt;
+				&lt;td&gt;&lt;textarea tip="请在这里输入您的意见。" errormsg="请填写内容长度为2到100字符的内容！"  datatype="length" lengthmin=2  lengthmax=100 altercss="gray" class="gray" name="msg" value=""&gt;请在这里输入您的意见。&lt;/textarea&gt;
+				&lt;/td&gt;
+				&lt;td&gt;&lt;div class="validform_checktip"&gt;&lt;/div&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td class="need"&gt;&lt;/td&gt;
+				&lt;td&gt;&lt;/td&gt;
+				&lt;td colspan="2" style="padding:10px 0 18px 0;"&gt;
+				&lt;input type="button" value="提 交" id="submit_btn"/&gt; &lt;input type="button" value="重 置" id="reset_form"/&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/form&gt;
+&lt;/div&gt;
+
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+/*表单设置*/
+.registerform .need{width:10px;color:#b20202;}
+.registerform td{padding:5px 0;vertical-align:top;text-align:left;}
+.registerform .inputxt,.registerform textarea{border:1px solid #a5aeb6;width:196px;padding:2px;}
+.registerform .gray{color:gray;}/*提示信息样式*/
+
+/*提示信息*/
+.validform_error{background-color:#ffe7e7;}/*校验错误对象样式*/
+.validform_checktip{margin-left:8px;line-height:20px;height:20px;overflow:hidden;color:#999;font-size:12px;}
+.validform_wrong{color:red;padding-left:20px;white-space:nowrap;background:url(error.png) no-repeat left center;}/*右侧展示信息,失败*/
+.validform_right{color:#71b83d;padding-left:20px;background:url(right.png) no-repeat left center;}/*有侧展示信息，通过*/
+/*弹出错误提示样式*/
+#validform_dialog{color:#7d8289;font:12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;width:280px;background:#fff;position:absolute;top:0px;right:50px;z-index:99999; display:none;filter:progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');-webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa;}
+#validform_dialog .validform_title{line-height:25px;height:25px;text-align:left;font-weight:bold;padding:0 8px;color:#fff;position:relative;background-color:#000;}
+#validform_dialog a.validform_close:link,#validform_dialog a.validform_close:visited{line-height:22px;position:absolute;right:8px;top:0px;color:#fff;text-decoration:none;}
+#validform_dialog a.validform_close:hover{color:#cc0;}
+#validform_dialog .validform_info{padding:8px;border:1px solid #000;border-top:none;text-align:left;}
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+$(function(){
+	//blur校验
+	QD.ValidForm($(".registerform"),2,"校验通过");
+	//提交
+	$("#submit_btn").click(function(){
+		//提交校验
+		QD.SubmitValidForm($(".registerform"),2,"校验通过");
+		
+		if($(".registerform").find(".validform_error").length){//有错误提示返回false
+			return false;
+		}else{//没有错误提示，进行提交
+			alert("submit");
+			return false;
+		}
+	});
+	
+	//重置表单
+	$("#reset_form").click(function(){
+		QD.ResetForm($(".registerform"));
+	});
+})
+
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/validators/index.html">form校验</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+
+</body>
+</html>

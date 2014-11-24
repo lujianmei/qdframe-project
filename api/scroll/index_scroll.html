@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： Scroll</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   功能描述：鼠标指向，根据位置左右移动；(上下形式将上下移动)
+点击按钮左右移动；(点击上下按钮上下移动)
+
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+QD.Scroll(idobj,scrollnum,timer,hidebtn,prevclassname,nextclassname,scrolldirect,istoscroll); 
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+
+<pre class="code prettyprint">
+idobj:表示要滚动的容器对象<br/>
+scrollnum:表示一次滚动的数目，参考值为1<br/>
+timer:表示鼠标以上多长时间滚动到尽头，单位为毫秒，参考值为4000<br/>
+hidebtn:表示是否隐藏左右/上下滚动按钮0表示不隐藏，1表示隐藏，参考值为 1<br/>
+prevclassname:表示左/上按钮的类名，便于前端开发人员自由传递定义的自己的类名，参考值为js_scroll_prev<br/>
+nextclassname:表示右/下按钮的类名，便于前端开发人员自由传递定义的自己的类名，参考值为js_scroll_next<br/>
+scrolldirect:表示滚动方向，0表示左右滚动 1表示上下滚动 当然左右滚动还是上下滚动前端通过样式控制，参考值为0<br/>
+istoscroll:表示鼠标移向是否滚动，1表示滚动 0表示不滚动   参考值为 1
+</pre>
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint">
+//左右滚动
+QD.Scroll($(".js_scroll_products"),1,3000,0,"js_scroll_prev","js_scroll_next",0,1); 
+//上下滚动
+QD.Scroll($(".js_scroll_products"),1,3000,0,"js_scroll_prev","js_scroll_next",1,0);
+
+</pre>
+
+
+<p>
+    说明
+</p>
+
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint">
+&lt;!-左右滚动/上下滚动html--&gt;
+&lt;!--START products scroll--&gt;
+		&lt;div class="product_scroll"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="product_item js_scroll_products"&gt;
+                    &lt;ul&gt;
+						&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;冰箱冷柜&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;洗衣机&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;空调&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;热水器&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;彩电&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;厨电厨房&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;电脑手机及数码&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;  
+						 
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/product.jpg" alt=""&gt;&lt;span class="product_name"&gt;生活家电&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                     &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="btn_scroll_prev js_scroll_prev"&gt;&lt;a href="javascript:;" class="icon_scroll_btn"&gt;&lt;/a&gt;&lt;/div&gt;
+                &lt;div class="btn_scroll_next js_scroll_next"&gt;&lt;a href="javascript:;" class="icon_scroll_btn"&gt;&lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- END products scroll --&gt;	
+
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+/*左右滚动具体样式*/
+/*left right scroll detail style*/
+/*布局样式*/
+/*layout style*/
+.product_scroll{background:#fff; width:100%;}
+.product_scroll .container{height:170px; margin:0 auto; padding:40px 8px 30px; position:relative; width:986px;}
+.product_scroll .product_item{height:170px; overflow:hidden; position:relative; width:986px;}
+.product_scroll ul{height:170px; position:relative; width:20000px;}
+.product_scroll li{float:left; padding:0 12px; text-align:center; width:140px;}
+.product_scroll li .product_name{display:block; font:normal 16px/16px 'Microsoft Yahei'; margin-top:16px;}
+.product_scroll .btn_scroll_prev,.product_scroll .btn_scroll_next{height:37px; position:absolute; top:115px; width:23px;}
+.product_scroll .btn_scroll_prev{display:""; left:-60px;}
+.product_scroll .btn_scroll_next{right:-60px;}
+.product_scroll .btn_scroll_prev a,.product_scroll .btn_scroll_next a{display:block; height:37px; width:23px;}
+/*滚动按钮图片展示*/
+/*scroll button picture style*/
+.product_scroll .icon_scroll_btn{background-image:url(icon_scroll_btn_lr.png) !important; background-image:url(icon_scroll_btn_lr_ie6.jpg); background-repeat:no-repeat;}
+.product_scroll .btn_scroll_prev a{background-position:-40px -1px;}
+.product_scroll .btn_scroll_prev a:hover{background-position:-114px -1px;}
+.product_scroll .btn_scroll_next a{background-position:-9px -1px;}
+.product_scroll .btn_scroll_next a:hover{background-position:-82px -1px;}
+
+/*****************************************************************************************************/
+
+/*上下滚动具体样式*/
+/*top down scroll detail style*/
+/*布局样式*/
+/*layout style*/
+
+body{
+	position:relative;
+}
+.product_scroll{border:0px red solid;background:#fff;width:170px;height:600px;position:absolute;left:500px;top:10px;}
+.product_scroll .container{border:0px blue solid;width:170px;height:500px;margin:50px 0px;position:relative;}
+.product_scroll .product_item{border:0px green solid;width:170px;height:500px;overflow:hidden;position:relative;}
+.product_scroll ul{border:0px yellow solid;width:170px;height:20000px;position:relative;}
+.product_scroll li{border:0px purple solid;padding-top:12px;padding-bottom:12px; text-align:center; height:140px;float:left;width:170px;}
+.product_scroll li .product_name{display:block; font:normal 16px/16px 'Microsoft Yahei'; margin:0px;}
+.product_scroll .btn_scroll_prev,.product_scroll .btn_scroll_next{width:37px;height:23px;position:absolute; left:70px;border:0px red solid;}
+.product_scroll .btn_scroll_prev{display:""; top:-50px;}
+.product_scroll .btn_scroll_next{bottom:-50px;}
+.product_scroll .btn_scroll_prev a,.product_scroll .btn_scroll_next a{display:block; width:37px; height:23px;}
+/*滚动按钮图片展示*/
+/*scroll button picture style*/
+.product_scroll .icon_scroll_btn{background-image:url(icon_scroll_btn_td.png) !important; background-image:url(icon_scroll_btn_td_ie6.jpg); background-repeat:no-repeat;}
+.product_scroll .btn_scroll_prev a{background-position:-1px -40px;}
+.product_scroll .btn_scroll_prev a:hover{background-position:-1px -114px;}
+.product_scroll .btn_scroll_next a{background-position:-1px -9px;}
+.product_scroll .btn_scroll_next a:hover{background-position:-1px -82px;}
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+//左侧滚动js
+$(function(){
+	QD.Scroll($(".js_scroll_products"),1,3000,0,"js_scroll_prev","js_scroll_next",0,1);
+});
+
+/*****************************************************************************************************/
+//上下滚动js
+$(function(){
+	QD.Scroll($(".js_scroll_products"),1,3000,0,"js_scroll_prev","js_scroll_next",1,0);
+});
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/scroll/scrollleftright.html">左右滚动</a>
+                                        </li>
+										<li data-description="Using selectors and property accessors with Node.">
+											<a href="../../build-test/scroll/scrolltopdown.html">上下滚动</a>
+										</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="../images/pager.css" rel="stylesheet" type="text/css" charset="UTF-8"/>
+<title>QDFrame</title>
+</head>
+<body>
+
+
+
+<div>
+
+
+<textarea style="width:900px; height:950px;">
+1、因有ajex请求需要使用apache或tomcat 服务器观看效果
+2、对WCM分页进行了，优化更新，采用xml实现了无刷新分页，考虑到有可能数据过多xml文件过大，采用多xml实现。<br />
+3、它的好处如下：分页只生成了xml，而不用生成整个HTML页面，节省了服务器空间，实现无刷新分页，提升了用户体验。<br />
+4、模板中填写下列代码，发布文件名:data，文件扩展名:xml。<br />
+5、xml中参数pageCount分页总数量，record_Count数据总量
+/*
+	QD.Page v1.0.0
+	=================================
+
+	Infomation
+	----------------------
+	Author : lipengyang
+	E-Mail : lipengyang@trs.com.cn
+	Date : 2004-01-24
+	
+	Example
+	----------------------
+	pram1:	//分页数据URL
+	pram2:	//分页输入选择器
+	pram3:	//数据输入选择器
+	insertItem: //定义分页数据样式
+	
+	QD.Page('data/data[n].xml','#page','#data');
+	function insertItem(data) {
+		return "<li><a href=\""+$(data).attr('url')+"\" title=\""+$(data).attr('title')+"\" target=\"_blank\">"+$(data).text()+"</a></li>";
+	}
+	
+	Supported in Internet Explorer, Mozilla Firefox
+	*/
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<comment>
+	<pageCount>17</pageCount>
+	<record_Count>100</record_Count>
+	<items>
+	<TRS_DOCUMENTS ID="OWNER" pagesize="4"><item url='<TRS_DOCUMENT FIELD='_RECURL' URLISABS='TRUE' AUTOLINK='TRUE' />' title='<TRS_DOCUMENT AUTOLINK="FALSE" />' ><![CDATA[<TRS_DOCUMENT NUM="50" AUTOLINK="FALSE" />]]></item></TRS_DOCUMENTS>
+	</items>
+</comment>
+
+</textarea>
+<div><ul id="data"></ul></div><br />
+<div ID="page"></div><br /><br />
+
+
+
+
+
+</div>
+<script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"> </script>
+<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>
+<script>
+//定义分页数据样式
+function insertItem(data) {
+	return "<li><a href=\""+$(data).attr('url')+"\" title=\""+$(data).attr('title')+"\" target=\"_blank\">"+$(data).text()+"</a></li>";
+}
+//参数 分页数据xml，分页写入选择器，数据写入选择器
+QD.Page('../data/data[n].xml',$("#page"),$("#data"));
+
+</script>
+</body>
+</html>

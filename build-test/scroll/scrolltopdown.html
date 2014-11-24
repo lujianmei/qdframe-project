@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scroll</title>
+
+
+<link type="text/css" rel="stylesheet" href="../images/scroll_topdown.css"/>
+
+</head>
+<body>
+		<!--START products scroll-->
+		<div class="product_scroll">
+            <div class="container">
+                <div class="product_item js_scroll_products">
+                    <ul>
+						<li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">冰箱冷柜</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">洗衣机</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">空调</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">热水器</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">彩电</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">厨电厨房</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">电脑手机及数码</span></a></li>  
+						 
+                        <li><a href="#"><img src="../images/product.jpg" alt=""><span class="product_name">生活家电</span></a></li>
+                     </ul>
+                </div>
+                <div class="btn_scroll_prev js_scroll_prev"><a href="javascript:;" class="icon_scroll_btn"></a></div>
+                <div class="btn_scroll_next js_scroll_next"><a href="javascript:;" class="icon_scroll_btn"></a></div>
+            </div>
+        </div>
+        <!-- END products scroll -->
+        <script type="text/javascript" src="../images/jquery-1.8.3.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				QD.Scroll($(".js_scroll_products"),1,3000,0,"js_scroll_prev","js_scroll_next",1,0);
+			});
+		</script>
+</body>
+</html>

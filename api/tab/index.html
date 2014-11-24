@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： Tab changing</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   功能描述
+   用于网页建设tab切换内容使用，功能分两种使用方式，异步请求数据和非异步请求数据，异步请求需要使用Tomcat或其它服务器查看。
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+
+QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",false);
+
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+
+<p>
+	pram1:	//定义标题切换选择器<br />
+	pram2:	//定义内容切换选择器<br />
+	pram3:	//切换定义class<br />
+	pram4:  //是否异步请求<br />
+</p>
+
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint" style="overflow-x:hidden;overflow-y:hidden"> &#x2F;&#x2F; 例子代码
+说明
+	QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",false);<br />
+	异步请求HTML写法，增加rel属性，异步数据URL地址：<br />
+&lt;ul class="sys_nav js_sys_navs"&gt;
+	&lt;li&gt;&lt;a href="javascript:;" rel="../data/winxp.xml"&gt;&lt;b&gt;Windows XP&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="javascript:;" rel="../data/winvista.xml"&gt;&lt;b&gt;Windows Vista&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="javascript:;" rel="../data/win7.xml"&gt;&lt;b&gt;Windows 7&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="javascript:;" rel="../data/win8.xml"&gt;&lt;b&gt;Windows 8&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+	QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",true);<br />
+</pre>
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint" >
+&#x2F;&#x2F; HTML代码，如果需要
+非异步请求
+&lt;div class="tab_item"&gt; 
+            &lt;div class="nr_pl_pd_tab_drivedown"&gt;
+				&lt;span class="title_sys"&gt;普通Tab切换操作系统&lt;/span&gt;
+				&lt;ul class="sys_nav js_sys_nav"&gt;
+					&lt;li&gt;&lt;a href="javascript:;" &gt;&lt;b&gt;Windows XP&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" &gt;&lt;b&gt;Windows Vista&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" &gt;&lt;b&gt;Windows 7&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" &gt;&lt;b&gt;Windows 8&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;div class="drive_data_wrap js_drive_data_wrap"&gt;
+					&lt;div class="drive_data_item"&gt;
+						Windows XP
+					&lt;/div&gt;
+					&lt;div class="drive_data_item"&gt;
+						Windows Vista
+					&lt;/div&gt;
+					&lt;div class="drive_data_item"&gt;
+						Windows 7
+					&lt;/div&gt;
+					&lt;div class="drive_data_item"&gt;
+						Windows 8
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+          &lt;/div&gt;&lt;br /&gt;
+异步请求
+ &lt;div class="tab_item" &gt; 
+            &lt;div class="nr_pl_pd_tab_drivedown"&gt;
+				&lt;span class="title_sys"&gt;异步请求Tab切换操作系统&lt;/span&gt;
+				&lt;ul class="sys_nav js_sys_navs"&gt;
+					&lt;li&gt;&lt;a href="javascript:;" rel="../data/winxp.xml"&gt;&lt;b&gt;Windows XP&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" rel="../data/winvista.xml"&gt;&lt;b&gt;Windows Vista&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" rel="../data/win7.xml"&gt;&lt;b&gt;Windows 7&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="javascript:;" rel="../data/win8.xml"&gt;&lt;b&gt;Windows 8&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;div class="drive_data_wrap js_drive_data_wraps"&gt;
+					&lt;div class="drive_data_item"&gt;
+						Windows XP
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+          &lt;/div&gt;
+
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; CSS代码，如果需要
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; Javascript代码，如果需要
+非异步请求<br />
+QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",false);<br />
+异步请求<br />
+QD.ChangeTab($(".js_sys_nav li a"),$(".js_drive_data_wrap .drive_data_item"),"active",true);<br />
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/tab/index.html">例子一</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+
+</body>
+</html>

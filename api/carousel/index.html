@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Node</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../images/cssgrids-min.css">
+    <link rel="stylesheet" href="../images/main.css">
+    <link rel="stylesheet" href="../images/prettify-min.css">
+    
+</head>
+<body>
+
+<div id="doc">
+    <div id="hd">
+        <h1><img src="http://www.trs.com.cn/images_new/logo.jpg"></h1>
+    </div>
+    
+        <a href="#toc" class="jump">Jump to Table of Contents</a>
+    
+
+            <h1>模块名称： Carousel</h1>
+    <div class="yui3-g">
+        <div class="yui3-u-3-4">
+            <div id="main">
+                <div class="content"><div class="intro">
+   <!--  功能描述  start-->
+   功能描述<br />
+   页面轮播图片
+   <!--  功能描述  start-->
+
+</div>
+
+<h2 id="getting-started">使用方法</h2>
+
+<p>
+使用此功能模块，需要在页面下面引入如下代码：
+</p>
+
+<pre class="code prettyprint">
+&lt;script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"&gt; &lt;/script&gt;
+&lt;script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"&gt;&lt;/script&gt;
+	</pre>
+
+<p>
+引入说明
+</p>
+代码执行方法
+<pre class="code prettyprint">&lt;script&gt;
+	QD.Carousel(2000,true,112);//注册主视觉事件
+&lt;/script&gt;</pre>
+
+
+
+
+
+<h2 id="node-using">参数说明</h2>
+<pre class="code prettyprint">
+
+	pram1:	//播放时间
+	pram2:	//是否自动播放
+	pram3:	//轮播按钮宽度 值等于0是不设置宽度
+	pram4:	//轮播图片选择器
+	pram5:	//轮播按钮选择器
+
+</pre>
+<h3 id="using-node">例子代码</h3>
+
+<pre class="code prettyprint" style="overflow-x:hidden;overflow-y:hidden"> &#x2F;&#x2F; 例子代码
+说明
+	QD.Carousel(2000,true,112,$(".js_kv_item li"),$(".js_kv_nav li"));//注册主视觉事件
+</pre>
+
+
+<h3 id="create">例子演示</h3>
+<h4>HTML</h4>
+<pre class="code prettyprint" >
+&#x2F;&#x2F; HTML代码，如果需要
+&lt;div class="nr_inn_platform"&gt;
+&lt;div class="kv_wrap"&gt;
+	&lt;ul class="kv_item js_kv_item"&gt;
+		&lt;li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140106592038358615.jpg" &gt;
+			&lt;dl&gt;
+				&lt;dt&gt;海尔创新平台&lt;/dt&gt;
+				&lt;dd&gt;分享生活创意，缔造创新产品&lt;/dd&gt;
+				&lt;dd class="link_more"&gt;&lt;a href="http://hope.haier.com/zh/"&gt;了解更多&lt;/a&gt;&lt;/dd&gt;
+			&lt;/dl&gt;
+		&lt;/li&gt;  
+		&lt;li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140123514656728948.jpg" &gt;
+			&lt;dl&gt;
+				&lt;dt&gt;海尔创意工场&lt;/dt&gt;
+				&lt;dd&gt;你的创意，海尔实现&lt;/dd&gt;
+				&lt;dd class="link_more"&gt;&lt;a href="http://idea.haier.com/"&gt;了解更多&lt;/a&gt;&lt;/dd&gt;
+			&lt;/dl&gt;
+		&lt;/li&gt;  
+		&lt;li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140123515356981648.jpg" &gt;
+			&lt;dl&gt;
+				&lt;dt&gt;海尔社区&lt;/dt&gt;
+				&lt;dd&gt;聊话题、解疑问、帮你选家电，我们很在行！&lt;/dd&gt;
+				&lt;dd class="link_more"&gt;&lt;a href="http://bbs.haier.com/"&gt;了解更多&lt;/a&gt;&lt;/dd&gt;
+			&lt;/dl&gt;
+		&lt;/li&gt; 
+	&lt;/ul&gt;
+	&lt;!-- END kv_item --&gt;
+	&lt;ul class="kv_nav js_kv_nav" style="width: 336px; margin-left: -168px;"&gt;
+		 &lt;li&gt;&lt;img src="http://test.haier.com/cn/creative/banner/201401/P020140106592038289438.jpg" alt=""&gt;&lt;/li&gt;
+		 &lt;li&gt;&lt;img src="http://test.haier.com/cn/creative/banner/201401/P020140123514577362889.jpg" alt=""&gt;&lt;/li&gt; 
+		 &lt;li&gt;&lt;img src="http://test.haier.com/cn/creative/banner/201401/P020140123515304160297.jpg" alt=""&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;!-- END kv_nav --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h4>CSS</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; CSS代码，如果需要
+.nr_inn_platform{width:100%;}
+.nr_inn_platform .banner_wrap{height:320px; margin-bottom:66px; position:relative; width:100%;}
+
+.nr_inn_platform .kv_wrap{margin-bottom:90px; position:relative; width:100%;}
+.nr_inn_platform .kv_item{height:320px; overflow:hidden; width:100%;}
+.nr_inn_platform .kv_item li{background-position:center center; background-repeat:no-repeat; height:320px; position:relative; text-align:center;}
+.nr_inn_platform .kv_item li dl{margin-left:-500px; left:50%; position:absolute; text-align:left;}
+.nr_inn_platform .kv_item li dt{color:#303030; font-size:32px;}
+.nr_inn_platform .kv_item li dd{font-size:18px;}
+.nr_inn_platform .kv_item li dd.link_more{margin-top:20px;}
+.nr_inn_platform .kv_item li dd.link_more a{ color:#005aaa; font-size:14px; padding-left:15px;}
+.nr_inn_platform .kv_item dl{padding:90px 0 0 660px; width:340px;}
+.nr_inn_platform .kv_nav{left:50%; position:absolute; top:292px;}
+.nr_inn_platform .kv_nav li{background:#fff; border-bottom:1px solid #ddd; cursor:pointer; float:left; margin-right:12px; height:56px; overflow:hidden; padding:2px; width:96px;}
+.nr_inn_platform .kv_nav li.current{background:#32beff;}
+.nr_inn_platform .kv_nav li img{height:56px; vertical-align:middle; width:96px;}
+.nr_inn_platform .sub_title{border-top:1px solid #ddd; height:50px; margin:0 auto; position:relative; width:1000px;}
+.nr_inn_platform .sub_title h2{background:#fff; color:#606060; font:normal 32px/32px 'Microsoft Yahei'; height:32px; margin-left:-133px; left:50%; position:absolute; top:-16px; text-align:center; width:266px;}
+
+</pre>
+
+<h4>Javascript</h4>
+<pre class="code prettyprint">
+&#x2F;&#x2F; Javascript代码，如果需要
+QD.Carousel(2000,true,112,$(".js_kv_item li"),$(".js_kv_nav li"));//注册主视觉事件
+</pre>
+
+
+</div>
+            </div>
+        </div>
+
+        <div class="yui3-u-1-4">
+            <div class="sidebar">
+                
+                   
+                
+
+                
+                    <div class="sidebox">
+                        <div class="hd">
+                            <h2 class="no-toc">相关例子</h2>
+                        </div>
+
+                        <div class="bd">
+                            <ul class="examples">
+                                
+                                    
+                                        <li data-description="Using selectors and property accessors with Node.">
+                                            <a href="../../build-test/scroll/carousel.html">例子一</a>
+                                        </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../images/prettify-min.js"></script>
+<script>prettyPrint();</script>
+
+</body>
+</html>

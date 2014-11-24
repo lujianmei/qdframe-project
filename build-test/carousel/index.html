@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../images/pager.css" rel="stylesheet" type="text/css" charset="UTF-8"/>
+<title>QDFrame</title>
+</head>
+<body>
+		  
+		  <style type="text/css">
+			body,
+			p,
+			dl,
+			dt,
+			dd,
+			ul,
+			ol,
+			li{
+			  margin: 0;
+			  padding: 0;
+			}
+
+			ul, ol {
+				list-style: none outside none;
+				zoom: 1;
+			}
+			.nr_inn_platform{width:100%; overflow:hidden;height: 420px;zoom:1;}
+			.nr_inn_platform .banner_wrap{height:320px; margin-bottom:66px; position:relative; width:100%;}
+			.nr_inn_platform .kv_wrap{height: 420px;position:relative; width:100%;z-index: 1;}
+			.nr_inn_platform .kv_item{height:320px; overflow:hidden; width:100%;position:relative;}
+			.nr_inn_platform .kv_item li{position:absolute;left:0;top:0;}
+			.nr_inn_platform .kv_item li{background-position:center center; background-repeat:no-repeat; height:320px; position:relative; text-align:center;}
+			.nr_inn_platform .kv_item li dl{margin-left:-500px; left:50%; position:absolute; text-align:left;}
+			.nr_inn_platform .kv_item li dt{color:#303030; font-size:32px;}
+			.nr_inn_platform .kv_item li dd{font-size:18px;}
+			.nr_inn_platform .kv_item li dd.link_more{margin-top:20px;}
+			.nr_inn_platform .kv_item li dd.link_more a{ color:#005aaa; font-size:14px; padding-left:15px;}
+			.nr_inn_platform .kv_item dl{padding:90px 0 0 660px; width:340px;}
+			.nr_inn_platform .kv_nav{left:50%; position:absolute; top:292px;}
+			.nr_inn_platform .kv_nav li{background:#fff; border-bottom:1px solid #ddd; cursor:pointer; float:left; margin-right:12px; height:56px; overflow:hidden; padding:2px; width:96px;}
+			.nr_inn_platform .kv_nav li.current{background:#32beff;}
+			.nr_inn_platform .kv_nav li img{height:56px; vertical-align:middle; width:96px;}
+			.nr_inn_platform .sub_title{border-top:1px solid #ddd; height:50px; margin:0 auto; position:relative; width:1000px;}
+			.nr_inn_platform .sub_title h2{background:#fff; color:#606060; font:normal 32px/32px 'Microsoft Yahei'; height:32px; margin-left:-133px; left:50%; position:absolute; top:-16px; text-align:center; width:266px;}
+
+		  </style>
+		  
+		 
+<br />
+		  <div class="nr_inn_platform">
+		  <div class="kv_wrap">
+                <ul class="kv_item js_kv_item">
+                    <li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140106592038358615.jpg" >
+                    	<dl>
+                        	<dt>海尔创新平台</dt>
+                            <dd>分享生活创意，缔造创新产品</dd>
+                            <dd class="link_more"><a href="http://hope.haier.com/zh/">了解更多</a></dd>
+                        </dl>
+                    </li>  
+                    <li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140123514656728948.jpg" >
+                    	<dl>
+                        	<dt>海尔创意工场</dt>
+                            <dd>你的创意，海尔实现</dd>
+                            <dd class="link_more"><a href="http://idea.haier.com/">了解更多</a></dd>
+                        </dl>
+                    </li>  
+                    <li class="kv_item" data-kv_bg="http://test.haier.com/cn/creative/banner/201401/P020140123515356981648.jpg" >
+                    	<dl>
+                        	<dt>海尔社区</dt>
+                            <dd>聊话题、解疑问、帮你选家电，我们很在行！</dd>
+                            <dd class="link_more"><a href="http://bbs.haier.com/">了解更多</a></dd>
+                        </dl>
+                    </li> 
+                </ul>
+                <!-- END kv_item -->
+                <ul class="kv_nav js_kv_nav" style="width: 336px; margin-left: -168px;">
+                     <li><img src="http://test.haier.com/cn/creative/banner/201401/P020140106592038289438.jpg" alt=""></li>
+                     <li><img src="http://test.haier.com/cn/creative/banner/201401/P020140123514577362889.jpg" alt=""></li> 
+					 <li><img src="http://test.haier.com/cn/creative/banner/201401/P020140123515304160297.jpg" alt=""></li>
+                </ul>
+                <!-- END kv_nav -->
+            </div>
+			</div>
+			
+<script type="text/javascript"  src="../images/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../images/qdframe-v1.0.0.js" charset="UTF-8"></script>
+			<script type="text/javascript"> 
+				
+				
+				/*
+				QD.Carousel v1.0.0
+				=================================
+
+				Infomation
+				----------------------
+				Author : lipengyang
+				E-Mail : lipengyang@trs.com.cn
+				Date : 2004-01-24
+				Readme:页面轮播图片
+				
+				Example
+				----------------------
+				pram1:	//播放时间
+				pram2:	//是否自动播放
+				pram3:	//轮播按钮宽度 值等于0是不设置宽度
+				pram4:	//轮播图片选择器
+				pram5:	//轮播按钮选择器
+				
+				Supported in Internet Explorer, Mozilla Firefox
+				*/
+				QD.Carousel(2000,true,112,$(".js_kv_item li"),$(".js_kv_nav li"));//注册主视觉事件
+				
+			</script>
+
+	
+</body>
+</html>
